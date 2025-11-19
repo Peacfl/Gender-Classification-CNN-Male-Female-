@@ -2,9 +2,9 @@
 
 A deep learning project using TensorFlow CNN to classify faces as male or female.
 
-![CNN]('/CNN app 1.png?raw=true "Optional Title"')
+![CNN](/CNNapp1.png?raw=true "Optional Title")
 
-![CNN]('/CNN app 2.png?raw=true "Optional Title"')
+![CNN](/CNNapp2.png?raw=true "Optional Title")
 
 ### Model Details
 - Input size: 150x150 RGB
