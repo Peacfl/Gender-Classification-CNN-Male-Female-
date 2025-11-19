@@ -2,9 +2,16 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image
+from huggingface_hub import hf_hub_download
 
 # Load model
-model = tf.keras.models.load_model("model\gender_model.keras")
+
+model_path = hf_hub_download(
+    repo_id="Peacfl/Gender-Classification-CNN-Male-Female",
+    filename="gender_model.keras"
+)
+
+model = tf.keras.models.load_model(model_path)
 
 st.title("Male-Female Gender Classification")
 st.write("Upload a face image and the model will classify it.")
@@ -24,4 +31,5 @@ if uploaded_file is not None:
     label = "Male" if pred > 0.5 else "Female"
 
     st.write(f"### Prediction: **{label}**")
+
     st.write(f"Confidence: `{pred:.3f}`")
